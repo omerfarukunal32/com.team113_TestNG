@@ -1,6 +1,7 @@
 package tests.Practice;
 
 import org.bouncycastle.math.ec.custom.sec.SecT113Field;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,12 +35,15 @@ public class P03 {
 
         // Test 2:Verify item prices are sorted from Iow to high with soft Assert
         System.out.println(saucedemo.sonucElementleri.getText());
-        List<String> sonucElementList = new ArrayList<>();
+        List<WebElement> sonucElementList= Driver.getDriver().findElements(By.xpath("//*[@class='inventory_item_price']"));
+        for (WebElement eachWebElement: sonucElementList
+             ) {
+            System.out.println(eachWebElement.getText());
+        }
+        System.out.println(saucedemo.sonucElementleri.getSize());
 
 
     }
-
-
 
 
 }
